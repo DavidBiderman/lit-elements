@@ -34,7 +34,7 @@ class AutocompleteElement extends LitElement {
     override connectedCallback() {
         super.connectedCallback();
         this.data = MockService.getData();
-        this.data.forEach((datum: string) => fuzzysort.prepare(datum));
+        this.data.forEach((datum: string) => datum = fuzzysort.prepare(datum));
         document.querySelector('body')?.addEventListener('focusout', this.clear);
     }
 
