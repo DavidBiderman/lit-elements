@@ -70,7 +70,6 @@ class AutocompleteElement extends LitElement {
             const focusEl = (this.renderRoot.querySelectorAll('.result-item')[this.selected] as HTMLElement);
             focusEl.scrollIntoView({ block: "center", inline: "center", behavior: "smooth" });
         }
-
     }
 
     clear = () => {
