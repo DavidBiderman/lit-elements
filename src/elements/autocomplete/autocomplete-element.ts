@@ -21,13 +21,13 @@ class AutocompleteElement extends LitElement {
     
     @property() results: Array<{value: string, markup: string}> = []; 
     @property() selected: number = -1;
-
-    static override get styles() {
-        return [autocompleteStyle];
-    }
-
+  
     constructor() {
         super();
+    }
+    
+    static override get styles() {
+        return [autocompleteStyle];
     }
     
     // init
