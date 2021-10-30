@@ -25,7 +25,7 @@ class AutocompleteElement extends LitElement {
     constructor() {
         super();
     }
-    
+
     static override get styles() {
         return [autocompleteStyle];
     }
@@ -37,7 +37,6 @@ class AutocompleteElement extends LitElement {
         this.data.forEach((datum: string) => fuzzysort.prepare(datum));
         document.querySelector('body')?.addEventListener('focusout', this.clear);
     }
-
 
     // cleanup
     override disconnectedCallback() {
@@ -94,7 +93,6 @@ class AutocompleteElement extends LitElement {
             return;
         }
     }
-
 
     override render = () => {
         return html`
