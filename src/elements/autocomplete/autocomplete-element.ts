@@ -25,12 +25,19 @@ class AutocompleteElement extends LitElement {
     static override get styles() {
         return [autocompleteStyle];
     }
-
+        
     constructor() {
         super();
         this.data = MockService.getData();
         this.data.forEach((datum: string) => fuzzysort.prepare(datum));
-        document.querySelector('body')?.addEventListener('focusout', () => this.clear());
+        document.querySelector('body')?.addEventListener('focusout', this.clear);
+    }
+
+
+    // cleanup
+    override disconnectedCallback() {
+        super.disconnectedCallback();
+        document.querySelector('body')?.removeEventListener('focusout', this.clear);
     }
     
     valueUpdated = (e: any) => {
