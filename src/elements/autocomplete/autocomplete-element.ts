@@ -17,7 +17,7 @@ class AutocompleteElement extends LitElement {
         allowTypo: true
     };
     readonly upDownKeys = [KEY_MAPPING.UP_ARROW, KEY_MAPPING.DOWN_ARROW];    
-    private data: Array<string>;
+    private data!: Array<string>;
     
     @property() results: Array<{value: string, markup: string}> = []; 
     @property() selected: number = -1;
@@ -25,9 +25,14 @@ class AutocompleteElement extends LitElement {
     static override get styles() {
         return [autocompleteStyle];
     }
-        
+
     constructor() {
         super();
+    }
+    
+    // init
+    override connectedCallback() {
+        super.connectedCallback();
         this.data = MockService.getData();
         this.data.forEach((datum: string) => fuzzysort.prepare(datum));
         document.querySelector('body')?.addEventListener('focusout', this.clear);
