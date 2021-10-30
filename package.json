@@ -1,0 +1,22 @@
+{
+  "name": "lit-element-proj",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "wds --node-resolve --open --esbuild-target auto",
+    "build": "tsc",
+    "dev": "tsc && wds --node-resolve --open --esbuild-target auto"
+  },
+  "author": "David Biderman",
+  "license": "ISC",
+  "dependencies": {
+    "lit": "^2.0.2"
+  },
+  "devDependencies": {
+    "@web/dev-server": "^0.1.25",
+    "@web/dev-server-esbuild": "^0.2.14"
+  },
+  "type": "module"
+}
