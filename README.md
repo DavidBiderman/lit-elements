@@ -1,2 +1,2 @@
 # lit-elements
-# npm install && run dev for dev build
+# npm install && npm run dev for dev build
